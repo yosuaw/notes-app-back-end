@@ -7,7 +7,7 @@ const addNoteHandler = (request, h) => {
     const createdAt = new Date().toISOString();
     const updatedAt = createdAt;
 
-    const newNote = { title, tags, body, id, updatedAt };
+    const newNote = { title, tags, body, id, createdAt, updatedAt };
     notes.push(newNote);
 
     const isSuccess = notes.filter((note) => note.id === id).length > 0;
@@ -71,7 +71,7 @@ const editNoteByIdHandler = (request, h) => {
 
         return h.response({
             status: 'success',
-            message: 'catatan berhasil diperbarui',
+            message: 'Catatan berhasil diperbarui',
         }).code(200);
     }
 
